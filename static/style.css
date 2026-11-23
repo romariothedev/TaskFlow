@@ -57,3 +57,32 @@ select:focus {
     color: #922f38;
     background: #fff0ef;
 }
+
+@media (max-width: 480px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 14px;
+    }
+
+    .intro {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .counter {
+        width: 100%;
+        text-align: center;
+    }
+
+    .panel, .column {
+        padding: 15px;
+    }
+
+    .topbar {
+        padding: 16px;
+    }
+}
