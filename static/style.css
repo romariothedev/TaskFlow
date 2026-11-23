@@ -25,3 +25,35 @@ button { border:0; border-radius:8px; background:#167f85; color:white; padding:1
 .message { padding:11px 14px; border-radius:8px; margin-bottom:14px; }.success { background:#e5f7ef; color:#16754b; }.error { background:#fff0ef; color:#a33b37; }
 footer { text-align:center; color:#8a94a7; padding:20px; font-size:12px; }
 @media(max-width:760px) { .board {grid-template-columns:1fr;} .task-form {grid-template-columns:1fr;} .intro {align-items:flex-start;} .topbar p {display:none;} }
+
+
+/* Melhorias visuais e interatividade */
+
+button {
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background: #11666b;
+    transform: translateY(-2px);
+}
+
+.task-card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px #17203315;
+}
+
+input:focus,
+select:focus {
+    outline: 2px solid #41c7c2;
+    border-color: #167f85;
+}
+
+.delete:hover {
+    color: #922f38;
+    background: #fff0ef;
+}
