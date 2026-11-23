@@ -63,3 +63,25 @@ registradas no quadro Kanban do GitHub Projects.
 
 A alteração exigiu ajustes na aplicação, no banco de dados,
 nos testes automatizados e na documentação.
+
+## Instalação detalhada
+
+Para executar o TaskFlow em outro computador, siga os passos:
+
+1. Clone o repositório:
+   `git clone https://github.com/romariothedev/TaskFlow.git`
+
+2. Entre na pasta:
+   `cd TaskFlow`
+
+3. Instale as dependências:
+   `pip install -r requirements.txt`
+
+4. Inicie a aplicação:
+   `python app.py`
+
+5. Abra o navegador e acesse:
+   `http://127.0.0.1:5000`
+
+Qualidade do projeto
+O projeto utiliza testes automatizados com Pytest para verificar o funcionamento das funcionalidades principais. O GitHub Actions executa os testes automaticamente quando novas alterações são enviadas ao repositório.
