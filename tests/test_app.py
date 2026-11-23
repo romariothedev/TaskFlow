@@ -35,3 +35,31 @@ def test_delete_task(client):
     client.post("/tasks/1/delete")
     page = client.get("/")
     assert b"Excluir depois" not in page.data
+
+def test_new_task_starts_with_pending_status(client):
+    client.post("/tasks", data={"title": "Nova atividade"})
+    page = client.get("/")
+    assert b"A Fazer" in page.data
+
+
+def test_invalid_status_is_rejected(client):
+    client.post("/tasks", data={"title": "Testar status"})
+    response = client.post(
+        "/tasks/1/status",
+        data={"status": "Status Inválido"}
+    )
+    assert response.status_code == 302
+    page = client.get("/")
+    assert b"Status inv" in page.data
+
+
+def test_task_description_is_saved(client):
+    client.post(
+        "/tasks",
+        data={
+            "title": "Documentação",
+            "description": "Criar documentação do sistema"
+        }
+    )
+    page = client.get("/")
+    assert b"Criar documenta" in page.data
