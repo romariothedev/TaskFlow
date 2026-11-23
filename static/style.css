@@ -1,0 +1,27 @@
+:root { font-family: Inter, Arial, sans-serif; color: #172033; background: #f3f6fb; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+.topbar { background: #14213d; color: white; padding: 20px max(6%, calc((100% - 1180px)/2)); display:flex; align-items:center; justify-content:space-between; }
+.brand { font-size: 25px; font-weight: 800; letter-spacing:-1px; }.brand span { color:#41c7c2; }
+.topbar p { color:#c8d3e5; font-size:13px; }
+.container { max-width:1180px; margin:38px auto; padding:0 22px; }
+.intro { display:flex; align-items:center; justify-content:space-between; margin-bottom:28px; }
+.eyebrow { color:#168f91; font-size:11px; font-weight:800; letter-spacing:2px; }
+h1 { margin:5px 0; font-size:30px; }.muted { color:#6e7890; }
+.counter { background:white; border:1px solid #e1e7f0; padding:14px 22px; border-radius:14px; font-size:25px; font-weight:800; }
+.counter small { font-size:12px; color:#78839a; font-weight:500; }
+.panel,.column { background:white; border:1px solid #e2e8f0; border-radius:15px; padding:20px; }
+.panel { margin-bottom:25px; }.panel h2,.column h2 { font-size:15px; margin:0 0 15px; }
+.task-form { display:grid; grid-template-columns:1fr 1.5fr auto; gap:10px; }
+input,select { border:1px solid #d9e1ec; border-radius:8px; padding:12px; font:inherit; min-width:0; }
+button { border:0; border-radius:8px; background:#167f85; color:white; padding:12px 17px; font-weight:700; cursor:pointer; }
+.board { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-items:start; }
+.column { min-height:210px; background:#f9fbfe; }.column-heading { display:flex; justify-content:space-between; align-items:center; }
+.column-heading span { background:#e6eef6; border-radius:20px; padding:3px 9px; font-size:12px; }
+.task-card { background:white; border:1px solid #e1e7f0; border-radius:11px; padding:14px; margin:12px 0; box-shadow:0 3px 10px #17203308; }
+.task-card h3 { font-size:14px; margin:0 0 7px; }.task-card p,.empty { color:#758097; font-size:13px; }
+.task-card label { display:block; color:#758097; font-size:11px; margin:12px 0 5px; }
+.task-card select { width:100%; padding:8px; font-size:12px; }.delete { background:transparent; color:#c14e58; padding:8px 0 0; font-size:12px; }
+.message { padding:11px 14px; border-radius:8px; margin-bottom:14px; }.success { background:#e5f7ef; color:#16754b; }.error { background:#fff0ef; color:#a33b37; }
+footer { text-align:center; color:#8a94a7; padding:20px; font-size:12px; }
+@media(max-width:760px) { .board {grid-template-columns:1fr;} .task-form {grid-template-columns:1fr;} .intro {align-items:flex-start;} .topbar p {display:none;} }

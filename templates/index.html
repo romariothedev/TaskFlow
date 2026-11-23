@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="intro">
+  <div><p class="eyebrow">PAINEL DE CONTROLE</p><h1>Gerenciamento de tarefas</h1>
+  <p class="muted">Acompanhe as atividades da equipe em um só lugar.</p></div>
+  <div class="counter">{{ tasks|length }} <small>tarefas</small></div>
+</section>
+<section class="panel">
+  <h2>Nova tarefa</h2>
+  <form action="{{ url_for('create_task') }}" method="post" class="task-form">
+    <input name="title" placeholder="Título da tarefa" maxlength="120" required>
+    <input name="description" placeholder="Descrição (opcional)" maxlength="300">
+    <button type="submit">Adicionar tarefa</button>
+  </form>
+</section>
+<section class="board">
+  {% for status in ["A Fazer", "Em Progresso", "Concluído"] %}
+  <div class="column">
+    <div class="column-heading"><h2>{{ status }}</h2>
+      <span>{{ tasks|selectattr("status", "equalto", status)|list|length }}</span></div>
+    {% for task in tasks if task.status == status %}
+    <article class="task-card">
+      <h3>{{ task.title }}</h3>
+      {% if task.description %}<p>{{ task.description }}</p>{% endif %}
+      <form action="{{ url_for('update_status', task_id=task.id) }}" method="post">
+        <label for="status-{{ task.id }}">Alterar status</label>
+        <select id="status-{{ task.id }}" name="status" onchange="this.form.submit()">
+          {% for option in ["A Fazer", "Em Progresso", "Concluído"] %}
+          <option value="{{ option }}" {% if task.status == option %}selected{% endif %}>{{ option }}</option>
+          {% endfor %}
+        </select>
+      </form>
+      <form action="{{ url_for('delete_task', task_id=task.id) }}" method="post" onsubmit="return confirm('Excluir esta tarefa?')">
+        <button class="delete" type="submit">Excluir</button>
+      </form>
+    </article>
+    {% else %}
+      <p class="empty">Nenhuma tarefa nesta coluna.</p>
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>
+{% endblock %}
