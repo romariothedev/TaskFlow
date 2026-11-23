@@ -39,3 +39,27 @@ Após a versão inicial, foi incluída a possibilidade de alterar o status da ta
 
 ## Situação
 Projeto acadêmico em desenvolvimento. O quadro GitHub Projects, os commits e a execução do workflow devem ser registrados no repositório durante o desenvolvimento.
+## Mudança de escopo simulada
+
+Durante o desenvolvimento do TaskFlow, foi simulada uma
+solicitação de mudança no escopo do projeto.
+
+Inicialmente, o sistema previa apenas o cadastro e a
+visualização de tarefas.
+
+Após uma avaliação das necessidades dos usuários, foi
+solicitada a inclusão de duas funcionalidades:
+
+- Alteração do status das tarefas.
+- Exclusão de tarefas cadastradas.
+
+A mudança foi aceita porque melhora a organização e o
+controle das atividades.
+
+As funcionalidades foram incorporadas ao sistema e
+registradas no quadro Kanban do GitHub Projects.
+
+## Impactos da mudança
+
+A alteração exigiu ajustes na aplicação, no banco de dados,
+nos testes automatizados e na documentação.
