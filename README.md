@@ -85,3 +85,18 @@ Para executar o TaskFlow em outro computador, siga os passos:
 
 Qualidade do projeto
 O projeto utiliza testes automatizados com Pytest para verificar o funcionamento das funcionalidades principais. O GitHub Actions executa os testes automaticamente quando novas alterações são enviadas ao repositório.
+
+## Testes automatizados implementados
+
+O TaskFlow possui 8 testes automatizados utilizando Pytest:
+
+1. Verificação da página inicial.
+2. Cadastro de tarefas.
+3. Validação de título obrigatório.
+4. Atualização do status.
+5. Exclusão de tarefas.
+6. Verificação do status inicial.
+7. Rejeição de status inválido.
+8. Armazenamento da descrição da tarefa.
+
+Todos os 8 testes foram executados com sucesso utilizando o comando `python -m pytest -v`.
