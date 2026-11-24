@@ -100,3 +100,15 @@ O TaskFlow possui 8 testes automatizados utilizando Pytest:
 8. Armazenamento da descrição da tarefa.
 
 Todos os 8 testes foram executados com sucesso utilizando o comando `python -m pytest -v`.
+
+Banco de dados
+
+O TaskFlow utiliza SQLite para armazenar as tarefas cadastradas.
+
+Cada tarefa possui:
+- Identificador único.
+- Título.
+- Descrição.
+- Status de acompanhamento.
+
+O banco de dados é inicializado automaticamente pela aplicação, facilitando sua execução e utilização.
